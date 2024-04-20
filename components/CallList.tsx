@@ -7,12 +7,14 @@ import MeetingCard from "./MeetingCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useGetCalls } from "@/hooks/useGetCall";
+import { useToast } from "./ui/use-toast";
 
 const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
 	const router = useRouter();
 	const { endedCalls, upcomingCalls, callRecordings, isLoading } =
 		useGetCalls();
 	const [recordings, setRecordings] = useState<CallRecording[]>([]);
+	const { toast } = useToast();
 
 	const getCalls = () => {
 		switch (type) {
