@@ -7,9 +7,11 @@ const Home = () => {
 	const time = now.toLocaleTimeString("en-US", {
 		hour: "2-digit",
 		minute: "2-digit",
+		timeZone: "Asia/Yangon",
 	});
 	const date = new Intl.DateTimeFormat("en-US", {
 		dateStyle: "full",
+		timeZone: "Asia/Yangon",
 	}).format(now);
 	return (
 		<section className="flex size-full flex-col gap-10 text-white">
